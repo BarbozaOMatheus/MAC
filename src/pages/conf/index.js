@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
+
+import styles from './estilo';
 
 export default class Config extends Component {
 
@@ -30,7 +32,9 @@ export default class Config extends Component {
           </View>
           
           <View style={styles.bottomItem}>
-            <TouchableOpacity style={styles.bottomItemInner}>
+            <TouchableOpacity style={styles.bottomItemInner}
+            onPress={() => this.props.navigation.navigate('Emergency')}
+            >
               <Text style={styles.texto}>EMERGÊNCIA</Text>
             </TouchableOpacity>
           </View>
@@ -54,60 +58,3 @@ export default class Config extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  top: {
-    height: '25%',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    backgroundColor: '#43e02f',
-    padding: 10
-  },
-  texto: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-    fontFamily: 'bold',
-    fontWeight:'700',
-  },
-  profileImage: {
-    width: 123,
-    height: 123,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 70,
-    borderWidth: 5,
-    borderColor: '#787878',
-    backgroundColor: '#eee',
-    elevation: 24,
-  },
-  center: {
-    height: '3%',
-    backgroundColor: '#1ec20a'
-  },
-  bottom: {
-    height: '72%',
-    backgroundColor: '#fff',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    padding: 5,
-  },
-  bottomItem: {
-    width: '50%',
-    height: '50%',
-    padding: 4,
-  },
-  bottomItemInner: {
-    flex: 1,
-    backgroundColor: '#e8dcdc',
-    justifyContent: 'center',
-    alignItems: 'center',
-    shadowColor: "black",
-    shadowRadius: 10,
-    elevation: 10,
-  }
-});

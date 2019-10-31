@@ -1,10 +1,11 @@
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 
-import Main from "./pages/main";
-import Config from "./pages/config";
-import Sobre from "./pages/sobre";
-import Tempo from "./pages/tempo";
+import Main from "./pages/main/";
+import Config from "./pages/conf/";
+import Sobre from "./pages/sobre/";
+import Tempo from "./pages/tempo/";
+import Emergency from './pages/emergency/';
 
 const AppNavigator = createStackNavigator(
   {
@@ -19,6 +20,9 @@ const AppNavigator = createStackNavigator(
     },
     Tempo: {
       screen: Tempo,
+    },
+    Emergency: {
+      screen: Emergency,
     },
   },
   {

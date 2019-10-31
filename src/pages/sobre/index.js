@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
+
+import styles from './estilo';
 
 export default class Sobre extends Component {
 
@@ -21,10 +23,10 @@ export default class Sobre extends Component {
         <View style={styles.center}></View>
         
         <View style={styles.bottom}>
-          <View style={{height: '20%',}}>
+          <View style={{height: '18%',}}>
             <Text style={styles.texto}>IF MAC</Text>
           </View>
-          <View style={{height: '60%',}}>
+          <View style={{height: '62%',}}>
             <Text style={styles.texto}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -47,42 +49,3 @@ export default class Sobre extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  top: {
-    height: '25%',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    backgroundColor: '#43e02f',
-    padding: 10
-  },
-  texto: {
-    fontSize: 15,
-    fontFamily: 'bold',
-    fontWeight:'700',
-  },
-  profileImage: {
-    width: 123,
-    height: 123,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 70,
-    borderWidth: 5,
-    borderColor: '#787878',
-    backgroundColor: '#eee',
-    elevation: 24,
-  },
-  center: {
-    height: '3%',
-    backgroundColor: '#1ec20a'
-  },
-  bottom: {
-    height: '72%',
-    backgroundColor: '#fff',
-    flexDirection: 'column',
-    padding: 5,
-  },
-});

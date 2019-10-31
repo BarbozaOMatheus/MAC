@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
+
+import styles from './estilo';
 
 export default class Tempo extends Component {
 
@@ -34,13 +36,13 @@ export default class Tempo extends Component {
             <TouchableOpacity style={styles.bottomItemInner}
             onPress={() => this.props.navigation.navigate('Tempo')}
             >
-              <Text style={styles.texto}>EDITAR</Text>
+              <Text style={styles.texto, {color: 'black'}}>EDITAR</Text>
             </TouchableOpacity>
           </View>
           
           <View style={styles.bottomItem}>
             <TouchableOpacity style={styles.bottomItemInner}>
-              <Text style={styles.texto}>GRAVAR</Text>
+              <Text style={styles.texto, {color: 'black'}}>GRAVAR</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -50,64 +52,3 @@ export default class Tempo extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  top: {
-    height: '25%',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    backgroundColor: '#43e02f',
-    padding: 10
-  },
-  texto: {
-    fontSize: 15,
-    fontFamily: 'bold',
-    fontWeight:'700',
-  },
-  profileImage: {
-    width: 123,
-    height: 123,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 70,
-    borderWidth: 5,
-    borderColor: '#787878',
-    backgroundColor: '#eee',
-    elevation: 24,
-  },
-  center: {
-    height: '3%',
-    backgroundColor: '#1ec20a'
-  },
-  bottom: {
-    height: '43%',
-    backgroundColor: '#fff',
-    flexDirection: 'column',
-    padding: 5,
-  },
-  menu: {
-    height: '29%',
-    backgroundColor: '#fff',
-    flexDirection: 'row',
-    padding: 5,
-    alignItems: 'flex-end',
-    justifyContent: 'center',
-  },
-  bottomItem: {
-    width: '50%',
-    height: '50%',
-    padding: 4,
-  },
-  bottomItemInner: {
-    flex: 1,
-    backgroundColor: '#e8dcdc',
-    justifyContent: 'center',
-    alignItems: 'center',
-    shadowColor: "black",
-    shadowRadius: 10,
-    elevation: 10,
-  }
-});

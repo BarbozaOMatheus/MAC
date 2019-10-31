@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { View, TouchableOpacity } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import styles from '../estilo/estilo';
+import styles from './estilo';
 
 export default class Main extends Component {
 
