@@ -22,10 +22,10 @@ export default class Sobre extends Component {
         
         <View style={styles.bottom}>
           <View style={{height: '20%',}}>
-            <Text>IF</Text>
+            <Text style={styles.texto}>IF MAC</Text>
           </View>
           <View style={{height: '60%',}}>
-            <Text >
+            <Text style={styles.texto}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -36,7 +36,7 @@ export default class Sobre extends Component {
             </Text>
           </View>
           <View style={{height: '20%',}}>
-            <Text >Colaboradores: Matheus Barboza, Jerry Santos, Felipe Paiva,
+            <Text style={styles.texto}>Colaboradores: Matheus Barboza, Jerry Santos, Felipe Paiva,
             Iago Barbosa
             </Text>
           </View>
@@ -58,6 +58,11 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     backgroundColor: '#43e02f',
     padding: 10
+  },
+  texto: {
+    fontSize: 15,
+    fontFamily: 'bold',
+    fontWeight:'700',
   },
   profileImage: {
     width: 123,

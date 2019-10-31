@@ -22,10 +22,10 @@ export default class Tempo extends Component {
         
         <View style={styles.bottom}>
           <View style={{height: '30%',}}>
-            <Text>Início Automático</Text>
+            <Text style={styles.texto}>Início Automático</Text>
           </View>
           <View style={{height: '70%',}}>
-            <Text >Tempo pressionando (segundos)</Text>
+            <Text style={styles.texto}>Tempo pressionando (segundos)</Text>
           </View>
         </View>
 
@@ -34,13 +34,13 @@ export default class Tempo extends Component {
             <TouchableOpacity style={styles.bottomItemInner}
             onPress={() => this.props.navigation.navigate('Tempo')}
             >
-              <Text>EDITAR</Text>
+              <Text style={styles.texto}>EDITAR</Text>
             </TouchableOpacity>
           </View>
           
           <View style={styles.bottomItem}>
             <TouchableOpacity style={styles.bottomItemInner}>
-              <Text>GRAVAR</Text>
+              <Text style={styles.texto}>GRAVAR</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -61,6 +61,11 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     backgroundColor: '#43e02f',
     padding: 10
+  },
+  texto: {
+    fontSize: 15,
+    fontFamily: 'bold',
+    fontWeight:'700',
   },
   profileImage: {
     width: 123,

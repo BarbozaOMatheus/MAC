@@ -25,13 +25,13 @@ export default class Config extends Component {
             <TouchableOpacity style={styles.bottomItemInner}
             onPress={() => this.props.navigation.navigate('Sobre')}
             >
-              <Text>SOBRE</Text>
+              <Text style={styles.texto}>SOBRE</Text>
             </TouchableOpacity>
           </View>
           
           <View style={styles.bottomItem}>
             <TouchableOpacity style={styles.bottomItemInner}>
-              <Text >EMERGÊNCIA</Text>
+              <Text style={styles.texto}>EMERGÊNCIA</Text>
             </TouchableOpacity>
           </View>
           
@@ -39,13 +39,13 @@ export default class Config extends Component {
             <TouchableOpacity style={styles.bottomItemInner}
             onPress={() => this.props.navigation.navigate('Tempo')}
             >
-              <Text>TEMPO</Text>
+              <Text style={styles.texto}>TEMPO</Text>
             </TouchableOpacity>
           </View>
           
           <View style={styles.bottomItem}>
             <TouchableOpacity style={styles.bottomItemInner}>
-              <Text>DICAS</Text>
+              <Text style={styles.texto}>DICAS</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -66,6 +66,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     backgroundColor: '#43e02f',
     padding: 10
+  },
+  texto: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+    fontFamily: 'bold',
+    fontWeight:'700',
   },
   profileImage: {
     width: 123,
