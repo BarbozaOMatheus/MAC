@@ -133,6 +133,10 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+           packagingOptions {
+       pickFirst '**/libjsc.so'
+   }
+
     defaultConfig {
         applicationId "com.acessibility"
         minSdkVersion rootProject.ext.minSdkVersion
