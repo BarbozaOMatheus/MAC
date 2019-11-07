@@ -13,12 +13,14 @@ export default class Main extends Component {
         <View style={styles.top}>
 
           <TouchableOpacity style={styles.profileImage}
-            onPress={() => this.props.navigation.goBack()}
+            delayLongPress={1800}
+            onLongPress={() => this.props.navigation.goBack()}
           >
             <Icon name="arrow-left" size={40} color="#fabb00" />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.profileImageConfig}
+            delayLongPress={1800}
             onLongPress={() => this.props.navigation.navigate('Config')}
           >
             <Icon name="cog" size={40} color="#0e6ee3" />

@@ -8,53 +8,57 @@ import styles from './estilo';
 export default class Config extends Component {
 
   render() {
-    return(
+    return (
       <View style={styles.conainer}>
         <View style={styles.top}>
-        
-            <TouchableOpacity style={styles.profileImage}
-            onPress={() => this.props.navigation.goBack()}
-            >
-              <Icon name="arrow-left" size={40} color="#fabb00" />
-            </TouchableOpacity>
-            
-        </View>  
-        
+
+          <TouchableOpacity style={styles.profileImage}
+            delayLongPress={1800}
+            onLongPress={() => this.props.navigation.goBack()}
+          >
+            <Icon name="arrow-left" size={40} color="#fabb00" />
+          </TouchableOpacity>
+
+        </View>
+
         <View style={styles.center}></View>
-        
+
         <View style={styles.bottom}>
           <View style={styles.bottomItem}>
             <TouchableOpacity style={styles.bottomItemInner}
-            onPress={() => this.props.navigation.navigate('Sobre')}
+              delayLongPress={1800}
+              onLongPress={() => this.props.navigation.navigate('Sobre')}
             >
               <Text style={styles.texto}>SOBRE</Text>
             </TouchableOpacity>
           </View>
-          
+
           <View style={styles.bottomItem}>
             <TouchableOpacity style={styles.bottomItemInner}
-            onPress={() => this.props.navigation.navigate('Emergency')}
+              delayLongPress={1800}
+              onLongPress={() => this.props.navigation.navigate('Emergency')}
             >
               <Text style={styles.texto}>EMERGÊNCIA</Text>
             </TouchableOpacity>
           </View>
-          
+
           <View style={styles.bottomItem}>
             <TouchableOpacity style={styles.bottomItemInner}
-            onPress={() => this.props.navigation.navigate('Tempo')}
+              delayLongPress={1800}
+              onLongPress={() => this.props.navigation.navigate('Tempo')}
             >
               <Text style={styles.texto}>TEMPO</Text>
             </TouchableOpacity>
           </View>
-          
+
           <View style={styles.bottomItem}>
             <TouchableOpacity style={styles.bottomItemInner}>
               <Text style={styles.texto}>DICAS</Text>
             </TouchableOpacity>
           </View>
         </View>
-        
-      </View> 
+
+      </View>
     );
   }
 }
