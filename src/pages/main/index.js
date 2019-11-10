@@ -1,11 +1,41 @@
 import React, { Component } from "react";
 
-import { View, TouchableOpacity } from "react-native";
+import { Alert, View, TouchableOpacity, Linking, PermissionsAndroid } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
+import ContactsWrapper from 'react-native-contacts-wrapper';
+
 
 import styles from './estilo';
 
 export default class Main extends Component {
+
+  onPressCall = (url) => (
+    Linking.canOpenURL(url)
+      .then((supported) => {
+        if (supported) {
+          return Linking.openURL(url)
+            .catch(() => null);
+        }
+      })
+  );
+
+  onButtonPressed = () => (
+    PermissionsAndroid.request(
+      PermissionsAndroid.PERMISSIONS.READ_CONTACTS,
+      {
+        'title': 'Contacts',
+        'message': 'This app would like to view your contacts.'
+      },
+      ContactsWrapper.getContact()
+    ).then((contact) => {
+      Alert.alert('teste')
+    })
+      .catch((error) => {
+        console.log("ERROR CODE: ", error.code);
+        console.log("ERROR MESSAGE: ", error.message);
+      })
+  );
+
 
   render() {
     return (
@@ -31,25 +61,33 @@ export default class Main extends Component {
 
         <View style={styles.bottom}>
           <View style={styles.bottomItem}>
-            <TouchableOpacity style={styles.bottomItemInner}>
+            <TouchableOpacity style={styles.bottomItemInner}
+              onPress={() => this.onPressCall('tel:190')}
+            >
               <Icon name="phone" size={65} color="red" />
             </TouchableOpacity>
           </View>
 
           <View style={styles.bottomItem}>
-            <TouchableOpacity style={styles.bottomItemInner}>
+            <TouchableOpacity style={styles.bottomItemInner}
+              onPress={() => this.onPressCall('addressbook://app')}
+            >
               <Icon name="address-book" size={65} color="black" />
             </TouchableOpacity>
           </View>
 
           <View style={styles.bottomItem}>
-            <TouchableOpacity style={styles.bottomItemInner}>
+            <TouchableOpacity style={styles.bottomItemInner}
+              onPress={() => this.onPressCall('https://www.google.com')}
+            >
               <Icon name="google" size={65} color="#0e6ee3" />
             </TouchableOpacity>
           </View>
 
           <View style={styles.bottomItem}>
-            <TouchableOpacity style={styles.bottomItemInner}>
+            <TouchableOpacity style={styles.bottomItemInner}
+              onPress={() => this.onPressCall('whatsapp://send')}
+            >
               <Icon name="whatsapp" size={65} color="#34af23" />
             </TouchableOpacity>
           </View>
