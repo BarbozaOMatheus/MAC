@@ -28,7 +28,7 @@ export default class Main extends Component {
       },
       ContactsWrapper.getContact()
     ).then((contact) => {
-      Alert.alert('teste')
+      console.log(contact)
     })
       .catch((error) => {
         console.log("ERROR CODE: ", error.code);
@@ -70,7 +70,7 @@ export default class Main extends Component {
 
           <View style={styles.bottomItem}>
             <TouchableOpacity style={styles.bottomItemInner}
-              onPress={() => this.onPressCall('addressbook://app')}
+              onPress={() => this.onButtonPressed()}
             >
               <Icon name="address-book" size={65} color="black" />
             </TouchableOpacity>
@@ -86,7 +86,7 @@ export default class Main extends Component {
 
           <View style={styles.bottomItem}>
             <TouchableOpacity style={styles.bottomItemInner}
-              onPress={() => this.onPressCall('whatsapp://send')}
+              onPress={() => this.onPressCall(' https://wa.me/99')}
             >
               <Icon name="whatsapp" size={65} color="#34af23" />
             </TouchableOpacity>
